@@ -14,31 +14,31 @@ export default createGlobalStyle`
         src: url(${AbelRegular}) format('woff');
     }
     @font-face {
-        font-family: 'Noto Sans KR Bold';
+        font-family: 'Lato Sans KR Bold';
         src: url(${LatoBold}) format('woff');
     }
     @font-face {
-        font-family: 'Noto Sans KR Light';
+        font-family: 'Lato Sans KR Light';
         src: url(${LatoLight}) format('woff');
     }
     @font-face {
-        font-family: 'Noto Sans KR Medium';
+        font-family: 'Lato Sans KR Medium';
         src: url(${LatoRegular}) format('woff');
     }
     @font-face {
-        font-family: 'Noto Sans KR Regular';
+        font-family: 'SpoqaHan Sans Neo Bold';
         src: url(${SpoqaHanSansNeoBold}) format('woff');
     }
     @font-face {
-        font-family: 'Noto Sans KR Thin';
+        font-family: 'SpoqaHan Sans Neo Light';
         src: url(${SpoqaHanSansNeoLight}) format('woff');
     }
     @font-face {
-        font-family: 'Noto Sans KR Thin';
+        font-family: 'SpoqaHan Sans Neo Medium';
         src: url(${SpoqaHanSansNeoMedium}) format('woff');
     }
     @font-face {
-        font-family: 'Noto Sans KR Thin';
+        font-family: 'SpoqaHan Sans Neo Regular';
         src: url(${SpoqaHanSansNeoRegular}) format('woff');
     }
 `;
