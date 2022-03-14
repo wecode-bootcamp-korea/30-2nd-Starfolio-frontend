@@ -1,0 +1,30 @@
+{
+  "result": [
+    {
+      "id": 1,
+      "name": "멋진 숙소",
+      "thumbnail": "https://user-images.githubusercontent.com/87808288/156470355-5a1b4371-1129-43a9-8684-4604300e76d8.png",
+      "galaxy": "안드로메다",
+      "theme": "아이스에이지",
+      "image": "https://user-images.githubusercontent.com/87808288/156470355-5a1b4371-1129-43a9-8684-4604300e76d8.png",
+      "accomodation_info": {
+        "min_of_people": 1,
+        "max_of_people": 4,
+        "price": 300000
+      }
+    },
+    {
+      "id": 2,
+      "name": "이쁜 숙소",
+      "thumbnail": "https://user-images.githubusercontent.com/87808288/156470355-5a1b4371-1129-43a9-8684-4604300e76d8.png",
+      "galaxy": "저멀리저멀리",
+      "theme": "나를찾아서",
+      "image": "https://user-images.githubusercontent.com/87808288/156470355-5a1b4371-1129-43a9-8684-4604300e76d8.png",
+      "accomodation_info": {
+        "min_of_people": 1,
+        "max_of_people": 4,
+        "price": 200000
+      }
+    }
+  ]
+}

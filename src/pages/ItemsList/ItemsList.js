@@ -1,7 +1,13 @@
 import React from 'react';
+import ItemCard from '../../components/ItemCard/ItemCard';
 
 function ItemsDetail() {
-  return <div>ItemsDetail</div>;
+  return (
+    <div>
+      ItemsList
+      <ItemCard />
+    </div>
+  );
 }
 
 export default ItemsDetail;

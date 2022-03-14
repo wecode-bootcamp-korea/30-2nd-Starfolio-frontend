@@ -8,6 +8,7 @@ import theme from './styles/theme';
 
 ReactDOM.render(
   <>
+    <GlobalFonts />
     <GlobalStyle />
     <GlobalFonts />
     <ThemeProvider theme={theme}>
