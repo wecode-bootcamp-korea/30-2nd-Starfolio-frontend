@@ -1,0 +1,162 @@
+.rdrDateDisplayWrapper,
+.rdrMonthAndYearPickers {
+  display: none;
+}
+.rdrMonthAndYearWrapper {
+  align-items: unset;
+  height: 0px;
+  padding-top: 0px;
+}
+
+.rdrNextPrevButton {
+  margin-top: 5px;
+  background-color: transparent;
+}
+.rdrCalendarWrapper {
+  width: 100%;
+}
+
+.rdrDayToday .rdrDayNumber span {
+  &:after {
+    bottom: 10px;
+    background-color: #9e9e9e;
+  }
+}
+.rdrMonthName {
+  text-align: center;
+  font-size: 14px;
+}
+.rdrMonths {
+  justify-content: space-around;
+}
+.rdrMonth {
+  width: 475px;
+}
+.rdrDay {
+  width: 65px;
+  height: 65px;
+  font-size: 14px;
+}
+
+.rdrSelected,
+.rdrInRange,
+.rdrStartEdge,
+.rdrEndEdge {
+  top: 3px;
+  bottom: 3px;
+}
+.rdrDayNumber {
+  top: 0px;
+  bottom: 0px;
+}
+.rdrInRange {
+  background-color: #9e9e9e;
+}
+.rdrEndEdge {
+  background-color: #9e9e9e;
+  right: 3px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.rdrStartEdge {
+  background-color: #9e9e9e;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  left: 3px;
+}
+.rdrDayInPreview {
+  border-top: 1px solid #9e9e9e;
+  border-bottom: 1px solid #9e9e9e;
+}
+.rdrDayStartPreview {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  left: 3px;
+  border-left: 1px solid #9e9e9e;
+  border-top: 1px solid #9e9e9e;
+  border-bottom: 1px solid #9e9e9e;
+}
+
+.rdrDayEndPreview {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  right: 3px;
+  border-right: 1px solid #9e9e9e;
+  border-top: 1px solid #9e9e9e;
+  border-bottom: 1px solid #9e9e9e;
+}
+.rdrDayStartPreview,
+.rdrDayInPreview,
+.rdrDayEndPreview {
+  top: 3px;
+  bottom: 3px;
+}
+
+.rdrDayEndOfMonth,
+.rdrDayEndOfWeek {
+  .rdrDayInPreview,
+  .rdrDayStartPreview {
+    right: 3px;
+  }
+  .rdrDayStartPreview {
+    left: 3px;
+  }
+}
+.rdrDayEndOfMonth,
+.rdrDayEndOfWeek {
+  .rdrInRange,
+  .rdrStartEdge {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    right: 3px;
+  }
+}
+.rdrDayStartOfMonth,
+.rdrDayStartOfWeek {
+  .rdrInRange,
+  .rdrEndEdge {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    left: 3px;
+  }
+}
+
+.rdrDayEndOfMonth,
+.rdrDayEndOfWeek {
+  .rdrInRange,
+  .rdrStartEdge {
+    right: 3px;
+  }
+}
+
+.rdrDayStartOfMonth,
+.rdrDayStartOfWeek {
+  .rdrDayInPreview,
+  .rdrDayEndPreview {
+    left: 3px;
+    border-top: 1px solid #9e9e9e;
+    border-bottom: 1px solid #9e9e9e;
+    border-left: 1px solid #9e9e9e;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+  .rdrDayEndPreview {
+    border-right: 1px solid #9e9e9e;
+  }
+}
+
+.rdrDayEndOfMonth,
+.rdrDayEndOfWeek {
+  .rdrDayInPreview,
+  .rdrDayStartPreview {
+    right: 3px;
+    border-top: 1px solid #9e9e9e;
+    border-bottom: 1px solid #9e9e9e;
+    border-right: 1px solid #9e9e9e;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  .rdrDayStartPreview {
+    border-left: 1px solid #9e9e9e;
+  }
+}
