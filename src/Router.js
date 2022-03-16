@@ -6,6 +6,7 @@ import ItemsList from './pages/ItemsList/ItemsList';
 import ItemsDetail from './pages/ItemsDetail/ItemsDetail';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Redirect from './pages/Login/RedirectHandler';
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
         <Route path="/login" element={<Login />} />;
         <Route path="/itemslist" element={<ItemsList />} />;
         <Route path="/itemsdetail" element={<ItemsDetail />} />;
+        <Route path="/oauth/kakao" element={<Redirect />} />;
       </Routes>
       <Footer />
     </BrowserRouter>
