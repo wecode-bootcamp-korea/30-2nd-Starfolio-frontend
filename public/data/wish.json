@@ -1,0 +1,49 @@
+{
+  "wishlist_lists": [
+    {
+      "wishlist_id": 2,
+      "planet_id": 1,
+      "planet_name": "북극성",
+      "planet_thumbnail": "https://github.com/Pbang91/wecode/blob/main/image/%EB%B6%81%EA%B7%B9%EC%84%B11.jpeg?raw=true",
+      "galaxy_name": "우리 은하",
+      "theme_name": "아이스에이지",
+      "accomodation_info": [
+        {
+          "min_of_people": 4,
+          "max_of_people": 8,
+          "price": "10000000.00"
+        }
+      ]
+    },
+    {
+      "wishlist_id": 3,
+      "planet_id": 2,
+      "planet_name": "남극성",
+      "planet_thumbnail": "https://github.com/Pbang91/wecode/blob/main/image/%EB%82%A8%EA%B7%B9%EC%84%B11.jpeg?raw=true",
+      "galaxy_name": "안드로메다 은하",
+      "theme_name": "아이스에이지",
+      "accomodation_info": [
+        {
+          "min_of_people": 2,
+          "max_of_people": 4,
+          "price": "5000000.00"
+        }
+      ]
+    },
+    {
+      "wishlist_id": 4,
+      "planet_id": 3,
+      "planet_name": "시리우스",
+      "planet_thumbnail": "https://github.com/Pbang91/wecode/blob/main/image/%EC%8B%9C%EB%A6%AC%EC%9A%B0%EC%8A%A41.jpeg?raw=true",
+      "galaxy_name": "컴퍼스자리 은하",
+      "theme_name": "용암노천탕",
+      "accomodation_info": [
+        {
+          "min_of_people": 2,
+          "max_of_people": 4,
+          "price": "8800000.00"
+        }
+      ]
+    }
+  ]
+}

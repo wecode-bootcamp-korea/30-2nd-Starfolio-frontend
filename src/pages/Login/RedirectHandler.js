@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { client_id, REDIRECT_URI } from './Oauth.js';
+import { API } from '../../config.js';
 
 const Redirect = () => {
   const navigate = useNavigate();
@@ -9,6 +10,11 @@ const Redirect = () => {
   const goToMain = () => {
     window.alert('로그인 되었습니다.');
     navigate('/');
+  };
+
+  const goToLogin = () => {
+    window.alert('로그인에 실패하였습니다.');
+    navigate('/login');
   };
 
   const bodyData = {
@@ -33,19 +39,21 @@ const Redirect = () => {
     })
       .then(res => res.json())
       .then(result => {
-        result.accessToken &&
-          fetch('http://5ad3-211-106-114-186.ngrok.io/users/kakao-login', {
-            method: 'GET',
-            headers: {
-              Authorization: result.access_token,
-            },
-          })
-            .then(res => res.json())
-            .then(result => {
-              console.log(result);
-              localStorage.setItem('token', result.accessToken);
-            });
-        goToMain();
+        !!result.access_token
+          ? fetch(`${API}/users/kakao-login`, {
+              method: 'GET',
+              headers: {
+                Authorization: result.access_token,
+              },
+            })
+              .then(res => res.json())
+              .then(result => {
+                localStorage.setItem('token', result.data.access_token);
+                localStorage.setItem('email', result.data.email);
+                localStorage.setItem('name', result.data.name);
+                goToMain();
+              })
+          : goToLogin();
       });
   });
 
