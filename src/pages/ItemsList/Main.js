@@ -46,13 +46,14 @@ const Main = () => {
 
   useEffect(() => {
     let addPath = '';
+    //TODO: queryString 확인
     console.log(addPath);
     if (pageQuery) addPath = pageQuery;
     if (sortQuery) addPath = addPath + '&sort=' + sortQuery;
     if (themeQuery) addPath = addPath + '&theme=' + themeQuery;
     if (rangeQuery)
       addPath = addPath + '&max-price=' + rangeQuery + '&min-price=0';
-
+    //TODO: queryString 확인
     console.log(addPath);
     fetch(`${API.itemsList}${addPath}`)
       .then(response => response.json())

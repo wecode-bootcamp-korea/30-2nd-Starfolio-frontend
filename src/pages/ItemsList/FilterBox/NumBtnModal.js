@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-const NumBtnModal = ({ makeModal, setIsNumBtn }) => {
+const NumBtnModal = ({ makeModal }) => {
   return (
     <Layout>
       <div className="themeLayout">
@@ -61,6 +61,7 @@ const Layout = styled.div`
 
 const CloseBtn = styled.div`
   font-size: 20px;
+  cursor: pointer;
 `;
 
 export default NumBtnModal;

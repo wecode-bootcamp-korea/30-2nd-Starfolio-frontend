@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const PriceBtnModal = ({
-  makeModal,
-  setIsNumBtn,
-  setRangeQuery,
-  rangeQuery,
-  setPriceName,
-}) => {
+const PriceBtnModal = ({ makeModal, setRangeQuery, setPriceName }) => {
   const [priceInfo, setPriceInfo] = useState(0);
-  // const [priceDataName, setPriceDataName] = useState();
   return (
     <Layout>
       <div className="themeLayout">
@@ -22,7 +15,6 @@ const PriceBtnModal = ({
           onClick={e => {
             makeModal(e);
             setRangeQuery(priceInfo);
-            // setPriceName(priceInfo);
             setPriceName(`₩0원 ~ ₩${priceInfo.toLocaleString()}원`);
           }}
         >
@@ -110,6 +102,7 @@ const Layout = styled.div`
 
 const CloseBtn = styled.div`
   font-size: 20px;
+  cursor: pointer;
 `;
 
 export default PriceBtnModal;

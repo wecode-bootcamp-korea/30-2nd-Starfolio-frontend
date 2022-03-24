@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { AiTwotoneHeart } from 'react-icons/ai';
@@ -26,7 +26,7 @@ function ItemCard({ id, name, thumbnail, galaxy, price }) {
         />
       </WishBtn>
       <RoomTitle>
-        <Link className="titleLink" to={`/itemsdetail/${id}`}>
+        <Link className="titleLink" to={`/itemslist/${id}`}>
           <Name>{name}</Name>
           <div>{galaxy}</div>
         </Link>
@@ -34,7 +34,7 @@ function ItemCard({ id, name, thumbnail, galaxy, price }) {
       <RoomInfo>
         <Paragraph>
           <RoomContent>
-            <Link className="roomContentLink" to={`/itemsdetail/${id}`}>
+            <Link className="roomContentLink" to={`/itemslist/${id}`}>
               <Info>기준 2명(최대 4명)</Info>
               <Info>{`₩${price.toLocaleString()}원`}</Info>
             </Link>
@@ -42,7 +42,7 @@ function ItemCard({ id, name, thumbnail, galaxy, price }) {
           <ReserveBtn>예약하기</ReserveBtn>
         </Paragraph>
         <RoomImage>
-          <Link to={`/itemsdetail/${id}`}>
+          <Link to={`/itemslist/${id}`}>
             <Image src={thumbnail} alt="test를 위한 사진입니다" />
           </Link>
         </RoomImage>
@@ -53,7 +53,7 @@ function ItemCard({ id, name, thumbnail, galaxy, price }) {
 
 const Layout = styled.div`
   position: relative;
-  margin: 70px 25px 50px 25px;
+  margin: 70px 40px 50px 40px;
 `;
 
 const WishBtn = styled.button`
