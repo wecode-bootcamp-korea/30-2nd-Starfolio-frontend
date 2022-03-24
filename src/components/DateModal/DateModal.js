@@ -20,7 +20,6 @@ export default function ModalDate({ setIsModalOpened }) {
     navigate(`/itemslist?check_in=${startDate}&check_out=${endDate}`);
     setIsModalOpened(false);
   };
-
   let startDate = moment(dateState[0].startDate).format('YYYY-MM-DD');
   let endDate = moment(dateState[0].endDate).format('YYYY-MM-DD');
 
@@ -52,4 +51,5 @@ const SearchBtn = styled.button`
   font-family: 'Abel Regular';
   font-size: 20px;
   cursor: pointer;
+  box-shadow: 13px 15px 30px 0 rgb(0 0 0 / 40%);
 `;

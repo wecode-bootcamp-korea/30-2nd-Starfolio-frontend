@@ -94,7 +94,7 @@ function MyPage() {
 }
 const MyPageWrap = styled.div`
   width: 100%;
-  margin: 0 auto;
+  margin: 50px auto;
   text-align: center;
 `;
 
