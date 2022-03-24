@@ -38,7 +38,10 @@ export default function LocationModal() {
       <Title>테마</Title>
       <Filters>
         {themeList.map(item => (
-          <ThemeBtn id={item.id} onClick={setIsFilterClicked(!isFilterClicked)}>
+          <ThemeBtn
+            key={item.id}
+            onClick={setIsFilterClicked(!isFilterClicked)}
+          >
             {item.theme}
           </ThemeBtn>
         ))}
