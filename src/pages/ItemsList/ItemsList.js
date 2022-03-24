@@ -1,13 +1,17 @@
 import React from 'react';
-import ItemCard from '../../components/ItemCard/ItemCard';
+import styled from 'styled-components';
+import Main from './Main';
 
-function ItemsDetail() {
+function ItemsList() {
   return (
-    <div>
-      ItemsList
-      <ItemCard />
-    </div>
+    <Layout>
+      <Main />
+    </Layout>
   );
 }
 
-export default ItemsDetail;
+const Layout = styled.div`
+  padding: 0 60px;
+`;
+
+export default ItemsList;
