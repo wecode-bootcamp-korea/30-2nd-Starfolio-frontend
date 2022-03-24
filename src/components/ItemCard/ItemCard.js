@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { AiTwotoneHeart } from 'react-icons/ai';
+import API from '../../config';
 
-function ItemCard() {
-  const [items, setItems] = useState([]);
+function ItemCard({ id, name, thumbnail, galaxy, price }) {
   const [isToggle, setIsToggle] = useState(false);
 
-  //TODO: 부모 컴포넌트에서 해당 state를 관리하고 props로 전달 예정
-  useEffect(() => {
-    fetch('/data/items.json')
-      .then(response => response.json())
-      .then(data => setItems(data));
-    // .then(data => console.log(data));
-  }, []);
-
-  if (!items.result) {
-    return null;
-  }
+  const postWishList = () => {
+    fetch(`${API.itemsList}/wishlists/${id}`, {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    });
+  };
 
   return (
     <Layout>
-      <WishBtn type="button">
+      <WishBtn type="button" onClick={postWishList}>
         <AiTwotoneHeart
           className="wish"
           onClick={() => setIsToggle(!isToggle)}
@@ -28,19 +26,25 @@ function ItemCard() {
         />
       </WishBtn>
       <RoomTitle>
-        <Name>{items.result[0].name}</Name>
-        <div>{items.result[0].galaxy}</div>
+        <Link className="titleLink" to={`/itemsdetail/${id}`}>
+          <Name>{name}</Name>
+          <div>{galaxy}</div>
+        </Link>
       </RoomTitle>
       <RoomInfo>
         <Paragraph>
           <RoomContent>
-            <Info>기준 2명(최대 4명)</Info>
-            <Info>{`₩${items.result[0].accomodation_info.price.toLocaleString()}원`}</Info>
+            <Link className="roomContentLink" to={`/itemsdetail/${id}`}>
+              <Info>기준 2명(최대 4명)</Info>
+              <Info>{`₩${price.toLocaleString()}원`}</Info>
+            </Link>
           </RoomContent>
           <ReserveBtn>예약하기</ReserveBtn>
         </Paragraph>
         <RoomImage>
-          <Image src={items.result[0].image} alt="test를 위한 사진입니다" />
+          <Link to={`/itemsdetail/${id}`}>
+            <Image src={thumbnail} alt="test를 위한 사진입니다" />
+          </Link>
         </RoomImage>
       </RoomInfo>
     </Layout>
@@ -48,20 +52,22 @@ function ItemCard() {
 }
 
 const Layout = styled.div`
-  padding: 70px 0 50px 90px;
+  position: relative;
+  margin: 70px 25px 50px 25px;
 `;
 
 const WishBtn = styled.button`
   position: absolute;
-  left: 610px;
-  top: 345px;
+  right: 10px;
+  bottom: 14px;
   cursor: pointer;
   background-color: transparent;
   border: 0;
   .wish {
     font-size: 30px;
-    opacity: 0.5;
-    /* color: red; */
+    opacity: 0.7;
+    color: white;
+    transition: all 0.4s ease-in-out;
   }
 `;
 
@@ -87,6 +93,10 @@ const RoomContent = styled.div`
   line-height: 2;
   display: inline-block;
   cursor: pointer;
+  .roomContentLink {
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 const Info = styled.div`
@@ -108,6 +118,10 @@ const RoomTitle = styled.div`
   height: 50px;
   cursor: pointer;
   font-family: 'SpoqaHan Sans Neo Regular';
+  .titleLink {
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 const RoomImage = styled.div`
