@@ -40,7 +40,7 @@ const Redirect = () => {
       .then(res => res.json())
       .then(result => {
         !!result.access_token
-          ? fetch(`${API}/users/kakao-login`, {
+          ? fetch(`http://13.124.166.227:8000/users/kakao-login`, {
               method: 'GET',
               headers: {
                 Authorization: result.access_token,
@@ -48,6 +48,7 @@ const Redirect = () => {
             })
               .then(res => res.json())
               .then(result => {
+                console.log(result);
                 localStorage.setItem('token', result.data.access_token);
                 localStorage.setItem('email', result.data.email);
                 localStorage.setItem('name', result.data.name);

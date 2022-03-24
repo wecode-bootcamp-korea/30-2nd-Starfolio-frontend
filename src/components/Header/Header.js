@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Modal from '../Modal/ModalContainer';
 import DateModal from '../DateModal/DateModal';
-import { Link } from 'react-router-dom';
+import LocationModal from '../LocationModal/LocationModal';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineCalendar } from 'react-icons/ai';
+import { BsPersonCircle } from 'react-icons/bs';
 import { MdOutlineLocationOn, MdOutlineDarkMode } from 'react-icons/md';
+import API from '../../config';
 
 const MENU_LIST = [
   {
-    name: 'FIND STAY',
+    name: 'FIND STAR',
     to: '/itemslist',
   },
   {
@@ -30,6 +33,12 @@ const Header = () => {
     dateModal: false,
     locationModal: false,
   });
+  const [isLogined, setIsLogined] = useState();
+  useEffect(() => {
+    setIsLogined(localStorage.getItem('token'));
+    console.log('hi');
+  });
+  const navigate = useNavigate();
 
   const modalToggler = type => {
     if (type === 'where')
@@ -55,7 +64,9 @@ const Header = () => {
           }
           dateSearch="dateSearch"
         >
-          {isModalOpened.locationModal && ''}
+          {isModalOpened.locationModal && (
+            <LocationModal setIsModalOpened={setIsModalOpened} />
+          )}
           {isModalOpened.dateModal && (
             <DateModal setIsModalOpened={setIsModalOpened} />
           )}
@@ -90,7 +101,30 @@ const Header = () => {
               ))}
             </MenuBox>
             <EtcMenuBox>
-              <Menu to="/login">LOGIN</Menu>
+              {isLogined ? (
+                <>
+                  <Menu
+                    to="/"
+                    onClick={() => {
+                      localStorage.removeItem('token');
+                      localStorage.removeItem('name');
+                      localStorage.removeItem('email');
+                      setIsLogined(false);
+                    }}
+                  >
+                    LOGOUT
+                  </Menu>
+                  <BsPersonCircle
+                    className="mypage"
+                    onClick={() => {
+                      navigate('/mypage');
+                    }}
+                  />
+                </>
+              ) : (
+                <Menu to="/login">LOGIN</Menu>
+              )}
+
               <MdOutlineDarkMode className="dark" />
             </EtcMenuBox>
           </Nav>
@@ -168,7 +202,7 @@ const WhenBox = styled.div`
 const Nav = styled.div`
   display: flex;
   align-items: center;
-  width: 600px;
+  width: 650px;
 `;
 
 const MenuBox = styled.ul`
@@ -183,6 +217,11 @@ const EtcMenuBox = styled.ul`
   display: flex;
   align-items: center;
 
+  .mypage {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
   .dark {
     font-size: 20px;
     cursor: pointer;
