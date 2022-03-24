@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function CategoryBtn({ id, name, sort, makeQueryString, setSortQuery }) {
-  // return <SortBtn onClick={() => handleSort(id, sort)}>{name}</SortBtn>;
-  // return <SortBtn onClick={() => makeQueryString(id, sort)}>{name}</SortBtn>;
+function CategoryBtn({ name, sort, setSortQuery }) {
   return <SortBtn onClick={() => setSortQuery(sort)}>{name}</SortBtn>;
 }
 

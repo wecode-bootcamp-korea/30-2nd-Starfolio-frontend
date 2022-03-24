@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
 import CategoryrBtn from './categoryBtn';
 import SORT_DATA from './sortData';
-import API from '../../../config';
 
-// const Category = ({ handleSort }) => {
 const Category = ({ makeQueryString, handleSort, setSortQuery }) => {
-  const navigate = useNavigate();
-
   return (
     <Layout>
       <CategoryInfo>
@@ -19,7 +14,6 @@ const Category = ({ makeQueryString, handleSort, setSortQuery }) => {
               id={sort.id}
               name={sort.name}
               sort={sort.sort}
-              // handleSort={handleSort}
               makeQueryString={makeQueryString}
               handleSort={handleSort}
               setSortQuery={setSortQuery}

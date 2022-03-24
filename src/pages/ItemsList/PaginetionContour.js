@@ -15,8 +15,6 @@ const PaginetionContour = ({
       <PageBtn onClick={() => updateOffset(0)}>1</PageBtn>
       <PageBtn onClick={() => updateOffset(1)}>2</PageBtn>
       <PageBtn onClick={() => updateOffset(2)}>3</PageBtn>
-      {/* <PageBtn onClick={() => updateOffset(3)}>4</PageBtn> */}
-      {/* <PageBtn onClick={() => updateOffset(4)}>5</PageBtn> */}
       <FaChevronRight className="nextBtn" />
     </Layout>
   );

@@ -95,6 +95,7 @@ const Layout = styled.div`
 
 const CloseBtn = styled.div`
   font-size: 20px;
+  cursor: pointer;
 `;
 
 export default ThemeBtnModal;
