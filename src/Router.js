@@ -17,7 +17,7 @@ function Router() {
         <Route path="/" element={<Main />} />;
         <Route path="/login" element={<Login />} />;
         <Route path="/itemslist" element={<ItemsList />} />;
-        <Route path="/itemslist:id" element={<ItemsDetail />} />;
+        <Route path="/itemslist/:id" element={<ItemsDetail />} />;
         <Route path="/itemsdetail" element={<ItemsDetail />} />;
         <Route path="/mypage" element={<MyPage />} />;
         <Route path="/oauth/kakao" element={<Redirect />} />;

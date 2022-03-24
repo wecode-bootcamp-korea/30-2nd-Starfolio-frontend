@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { client_id, REDIRECT_URI } from './Oauth.js';
-import { API } from '../../config.js';
+import { API, BASE_URL } from '../../config.js';
 
 const Redirect = () => {
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ const Redirect = () => {
       .then(res => res.json())
       .then(result => {
         !!result.access_token
-          ? fetch(`http://13.124.166.227:8000/users/kakao-login`, {
+          ? fetch(`${BASE_URL}/users/kakao-login`, {
               method: 'GET',
               headers: {
                 Authorization: result.access_token,
