@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import LikeItemCard from './Component/LikeItemCard';
 import { API } from '../../config.js';
 
-function MyPage() {
+function MyPage(id) {
   const [likeList, setLikeList] = useState([]);
   const userEmail = localStorage.getItem('email');
   const userName = localStorage.getItem('name');
@@ -12,7 +12,7 @@ function MyPage() {
   const menuTextList = ['예약 정보', '취소 내역', '이용권', 'WishList'];
 
   useEffect(() => {
-    fetch(`${API}/wishlists`, {
+    fetch(`${API}/wishlists${id}`, {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),

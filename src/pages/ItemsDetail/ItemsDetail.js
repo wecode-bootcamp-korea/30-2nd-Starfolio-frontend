@@ -1,14 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { AiOutlineWifi, AiOutlineCloud, AiFillAudio } from 'react-icons/ai';
 import { GiBarracks, GiCardboardBoxClosed, GiUltrasound } from 'react-icons/gi';
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
+import { BASE_URL } from '../../config';
 
 function ItemsDetail() {
   const params = useParams();
   const [featureList, setFeatureList] = useState([]);
-
+  const [itemImg, setItemImg] = useState();
   const AMENITIES_COMENTS = [
     '블루투스 스피커',
     'DSLR',
@@ -53,18 +55,15 @@ function ItemsDetail() {
   ];
 
   useEffect(() => {
-    fetch(`${API}/planets/planet/${params.id}/accomodation/${params.id}`, {
-      method: 'GET',
-      headers: {
-        Authorization: localStorage.getItem('token'),
-      },
-    })
+    fetch(`${BASE_URL}/planets/planet/${params.id}/accomodation/${params.id}`)
       .then(res => res.json())
       .then(data => {
-        setFeatureList(data.result);
-        // console.log(result);
+        if (data.result.images && data.result.images.length > 0) {
+          setFeatureList(data.result);
+          setItemImg(featureList.images[0]);
+        }
       });
-  }, []);
+  }, [params.id, featureList.images]);
 
   return (
     <DetailWrapper>
@@ -95,7 +94,7 @@ function ItemsDetail() {
             </Detail>
           </InfoBox>
           <RoomImageBox>
-            <RoomImage src={featureList.images[0]} />
+            <RoomImage src={itemImg} alt="없음" />
           </RoomImageBox>
         </RoomInfo>
 
