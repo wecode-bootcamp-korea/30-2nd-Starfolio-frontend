@@ -15,11 +15,11 @@
 
 **백엔드**
 김가람휘, 박건규
-
+Cancel changes
 
 ## Target Site
-###<a href="https://www.stayfolio.com">스테이 폴리오</a>
-
+### [Stay Folio](https://www.stayfolio.com)
+![Stay Folio](https://user-images.githubusercontent.com/81318468/229256948-54d87815-fd3b-4ada-9ec6-bd85ff409b17.png)
 
 ## 선정 이유
 - 모던하고 심플한 UI 및 디자인
